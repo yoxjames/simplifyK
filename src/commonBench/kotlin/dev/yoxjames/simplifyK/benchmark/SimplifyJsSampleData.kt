@@ -1,5 +1,6 @@
 package dev.yoxjames.simplifyK.benchmark
 
+// This data is from the simplify-js tests. This ensures passivity with simplify-js (we want a direct port).
 val points = listOf(
     Point2D(224.55, 250.15),
     Point2D(226.91, 244.19),
