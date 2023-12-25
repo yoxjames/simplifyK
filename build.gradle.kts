@@ -6,10 +6,14 @@ plugins {
     alias(libs.plugins.kotlinx.benchmark)
     alias(libs.plugins.detekt)
     alias(libs.plugins.dokka)
+    alias(libs.plugins.benmanes.versions)
+    alias(libs.plugins.binarycompatibility)
+    alias(libs.plugins.nexus)
+    signing
     `maven-publish`
 }
 
-group = "dev.yoxjames"
+group = "dev.jamesyox"
 version = libs.versions.current.get()
 
 benchmark {
@@ -20,15 +24,15 @@ benchmark {
 
 detekt {
     buildUponDefaultConfig = true // preconfigure defaults
-    allRules = false // activate all available (even unstable) rules.
     autoCorrect = true
+    config.from(files("$projectDir/detekt/config.yml"))
 
     dependencies {
         detektPlugins(libs.detekt.formatting)
+        detektPlugins(libs.detekt.library)
     }
 }
 
-// Kotlin DSL
 tasks.withType<Detekt> {
     jvmTarget = libs.versions.jvm.get()
 }
@@ -43,18 +47,15 @@ kotlin {
             associateWith(compilations.getByName("main"))
         }
         jvmToolchain(libs.versions.jvm.get().toInt())
-        withJava()
     }
     js(IR) {
         browser {
-            testTask(
-                Action {
-                    useKarma {
-                        useChromium()
-                        useFirefox()
-                    }
+            testTask {
+                useKarma {
+                    useChromium()
+                    useFirefox()
                 }
-            )
+            }
         }
         nodejs()
     }
@@ -108,5 +109,73 @@ allprojects {
 tasks.register("detektAll") {
     allprojects {
         this@register.dependsOn(tasks.withType<Detekt>())
+    }
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            val ossrhUsername: String by project
+            val ossrhPassword: String by project
+            val ossrhStagingProfileId: String by project
+
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+
+            username = ossrhUsername
+            password = ossrhPassword
+            stagingProfileId = ossrhStagingProfileId
+        }
+    }
+}
+
+signing {
+    sign(publishing.publications)
+}
+
+publishing {
+    publications.withType<MavenPublication> {
+        groupId = project.group.toString()
+        version = libs.versions.current.get()
+        val publication = this
+        val dokkaJar = tasks.register<Jar>("${publication.name}DokkaJar") {
+            group = JavaBasePlugin.DOCUMENTATION_GROUP
+            description = "Assembles Kotlin docs with Dokka into a Javadoc jar"
+            archiveClassifier.set("javadoc")
+            from(tasks.named("dokkaHtml"))
+            // Each archive name should be distinct, to avoid implicit dependency issues.
+            // We use the same format as the sources Jar tasks.
+            // https://youtrack.jetbrains.com/issue/KT-46466
+            archiveBaseName.set("${archiveBaseName.get()}-${publication.name}")
+        }
+
+        artifact(dokkaJar)
+
+        pom {
+            name = project.name
+            description = "TODO"
+            url = "http://www.jamesyox.dev/simplifyK"
+
+            licenses {
+                license {
+                    name = "Apache License, Version 2.0"
+                    url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                }
+            }
+
+            developers {
+                developer {
+                    name = "James Yox"
+                    id = "yoxjames"
+                    url = "http://www.jamesyox.dev"
+                }
+            }
+
+            scm {
+                connection = "scm:git:github.com/yoxjames/simplifyK.git"
+                developerConnection = "scm:git:ssh://github.com/yoxjames/simplifyK.git"
+                url = "https://github.com/yoxjames/simplifyK"
+            }
+        }
     }
 }

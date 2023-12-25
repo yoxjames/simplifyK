@@ -1,0 +1,11 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:dev.jamesyox.simplifyk.simplifications////PointingToDeclaration/simplify-k/dev.jamesyox.simplifyk.simplifications/index.html
+$dokka.location:dev.jamesyox.simplifyk.simplifications//radialDistance/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Double]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Double]#kotlin.Function1[kotlin.Double,kotlin.Double]#kotlin.Function1[kotlin.Double,kotlin.Double]/PointingToDeclaration/simplify-k/dev.jamesyox.simplifyk.simplifications/radial-distance.html
+$dokka.location:dev.jamesyox.simplifyk.simplifications//ramerDouglasPeucker/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Double]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Double]#kotlin.Function1[kotlin.Double,kotlin.Double]#kotlin.Function1[kotlin.Double,kotlin.Double]/PointingToDeclaration/simplify-k/dev.jamesyox.simplifyk.simplifications/ramer-douglas-peucker.html
+$dokka.location:dev.jamesyox.simplifyk////PointingToDeclaration/simplify-k/dev.jamesyox.simplifyk/index.html
+$dokka.location:dev.jamesyox.simplifyk//simplify/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Boolean#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Double]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Double]#kotlin.Function1[kotlin.Double,kotlin.Double]#kotlin.Function1[kotlin.Double,kotlin.Double]/PointingToDeclaration/simplify-k/dev.jamesyox.simplifyk/simplify.html
+$dokka.location:dev.jamesyox.simplifyk//simplify/kotlin.collections.List[kotlin.Pair[kotlin.Double,kotlin.Double]]#kotlin.Double#kotlin.Boolean/PointingToDeclaration/simplify-k/dev.jamesyox.simplifyk/simplify.html
+dev.jamesyox.simplifyk
+dev.jamesyox.simplifyk.simplifications
+

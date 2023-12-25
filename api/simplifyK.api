@@ -1,0 +1,43 @@
+public final class dev/yoxjames/simplifyk/SimplifyKt {
+	public static final fun simplify (Ljava/util/List;DZ)Ljava/util/List;
+	public static final fun simplify (Ljava/util/List;DZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/util/List;
+	public static synthetic fun simplify$default (Ljava/util/List;DZILjava/lang/Object;)Ljava/util/List;
+	public static synthetic fun simplify$default (Ljava/util/List;DZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/util/List;
+}
+
+public final class dev/yoxjames/simplifyk/simplifications/DpStepParams {
+	public fun <init> (Ljava/util/List;IIDLjava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()I
+	public final fun component3 ()I
+	public final fun component4 ()D
+	public final fun component5 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;IIDLjava/util/List;)Ldev/yoxjames/simplifyk/simplifications/DpStepParams;
+	public static synthetic fun copy$default (Ldev/yoxjames/simplifyk/simplifications/DpStepParams;Ljava/util/List;IIDLjava/util/List;ILjava/lang/Object;)Ldev/yoxjames/simplifyk/simplifications/DpStepParams;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEpsilon ()D
+	public final fun getFirstIndex ()I
+	public final fun getLastIndex ()I
+	public final fun getPoints ()Ljava/util/List;
+	public final fun getSimplified ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/yoxjames/simplifyk/simplifications/RadialDistanceKt {
+	public static final fun getSquareDistance (Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)D
+	public static final fun radialDistance (Ljava/util/List;DLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/util/List;
+	public static synthetic fun radialDistance$default (Ljava/util/List;DLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/util/List;
+}
+
+public final class dev/yoxjames/simplifyk/simplifications/RamerDouglasPeuckerKt {
+	public static final fun getSimplifyDpStep (DLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lkotlin/DeepRecursiveFunction;
+	public static final fun getSquareSegDistance (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)D
+	public static final fun ramerDouglasPeucker (Ljava/util/List;DLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/util/List;
+	public static synthetic fun ramerDouglasPeucker$default (Ljava/util/List;DLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/util/List;
+}
+
+public final class dev/yoxjames/simplifyk/simplifications/util/UtilsKt {
+	public static final fun coord (Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)D
+}
+
