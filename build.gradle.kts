@@ -60,24 +60,23 @@ kotlin {
         nodejs()
     }
 
-    // TODO: I dont own any Apple products so I cannot build Apple artifacts. However it will probably work....
     // Native: https://kotlinlang.org/docs/native-target-support.html
     // Tier 1
     linuxX64()
-    //macosX64()
-    //macosArm64()
-    //iosSimulatorArm64()
-    //iosX64()
+    macosX64()
+    macosArm64()
+    iosSimulatorArm64()
+    iosX64()
     // Tier 2
     linuxArm64()
-    //watchosSimulatorArm64()
-    //watchosX64()
-    //watchosArm32()
-    //watchosArm64()
-    //tvosSimulatorArm64()
-    //tvosX64()
-    //tvosArm64()
-    //iosArm64()
+    watchosSimulatorArm64()
+    watchosX64()
+    watchosArm32()
+    watchosArm64()
+    tvosSimulatorArm64()
+    tvosX64()
+    tvosArm64()
+    iosArm64()
     // Tier 3
     mingwX64()
 
@@ -115,9 +114,9 @@ tasks.register("detektAll") {
 nexusPublishing {
     repositories {
         sonatype {
-            val ossrhUsername: String by project
-            val ossrhPassword: String by project
-            val ossrhStagingProfileId: String by project
+            val ossrhUsername: String? by project
+            val ossrhPassword: String? by project
+            val ossrhStagingProfileId: String? by project
 
             nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
             snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
