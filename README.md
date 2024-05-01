@@ -1,18 +1,24 @@
 # SimplifyK
 
+![Maven Central Version](https://img.shields.io/maven-central/v/dev.jamesyox/simplifyK)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Kotlin](https://img.shields.io/badge/kotlin-1.9.23-blue.svg?logo=kotlin)](http://kotlinlang.org)
+
 This is a small Kotlin Multiplatform library for polyline simplification. It is essentially a port of [simplify-js](https://mourner.github.io/simplify-js/) in common Kotlin.
 
 ## Quick Start
 This project is deployed to Maven Central. The following are the coordinates:
 
 groupId: `dev.jamesyox`
+
 artifactId: `simplifyK`
+
 version: `0.1.0`
 
 To include in a gradle based project you would add this to your dependencies block.
 
 ```kotlin
-implementation("dev.jamesyox:simplifyK:0.1.0")
+implementation("dev.jamesyox:simplifyK:0.2.0")
 ```
 
 The primary use case closely mirrors the API of simplify-js. However, this library contains no concrete implementation of a Point or Point2D data type. It is expected that callers will have their own implementation. Rather than have callers implement an interface or convert a list to a different data type, which could be expensive or impractical on a large dataset, callers are expected to provide a `xExtractor` and `yExtractor` telling the algorithm how to get the `x` and `y` coordinates for a given type.
@@ -68,4 +74,4 @@ SimplifyK like simplify-js applies Radial Distance first which is an algorithm t
 Ramer-Douglas-Peucker is a recursive algorithm. To prevent any stack overflow issues `DeepRecursiveFunction` (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-deep-recursive-function/) from the Kotlin standard library was used. Therefore, this should work on even large non-optimal data sets. 
 
 ## Contributing
-Contributions are welcome including additional polyline simplification algorithms and performance improvements. Before opening a PR be sure to run tests and static analysis `./gradlew allTest detektAll`. If you run into issues with the browser tests at least ensure that `./gradlew jvmTest` passes. This project also includes some JVM benchmarks which can be run with `./gradlew bench` if you have performance improvements to propose I would appreciate including benchmarks for each implementation.
+Contributions are welcome including additional polyline simplification algorithms and performance improvements. Before opening a PR be sure to run tests and static analysis `./gradlew allTest allDetekt`. If you run into issues with the browser tests at least ensure that `./gradlew jvmTest` passes. This project also includes some JVM benchmarks which can be run with `./gradlew bench` if you have performance improvements to propose I would appreciate including benchmarks for each implementation.
