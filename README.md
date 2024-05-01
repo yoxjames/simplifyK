@@ -13,7 +13,7 @@ groupId: `dev.jamesyox`
 
 artifactId: `simplifyK`
 
-version: `0.1.0`
+version: `0.2.0`
 
 To include in a gradle based project you would add this to your dependencies block.
 
